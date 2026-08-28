@@ -1,0 +1,10 @@
+﻿services:
+  simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: polartwin-simulator
+    env_file:
+      - .env
+    restart: unless-stopped
+    # No ports exposed — outbound MQTT only
